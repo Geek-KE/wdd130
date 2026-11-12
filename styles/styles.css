@@ -50,6 +50,11 @@ main ul {
 /* relative so the heading can sit on top of the image */
 aside {
   width: 20rem;
+  margin: 1rem;
+  border: 1px solid rgb(0 0 0 / 0.2);
+  padding: 1rem;
+  background-color: #eee;
+  color: #333;
   text-align: center;
   position: relative;
 }
