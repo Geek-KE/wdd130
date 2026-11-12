@@ -1,3 +1,10 @@
+/* reset default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 nav {
   background-color: #1a3d5c;
   padding: 0.5rem;
@@ -23,22 +30,38 @@ h1 {
   color: #1a3d5c;
 }
 
+/* profile picture floats to the right of my intro */
 main img {
   width: 150px;
   height: auto;
   border: 1px solid #999;
   padding: 4px;
   box-shadow: 0 0 10px #777;
+  float: right;
+  margin-left: 1rem;
 }
 
+/* keep the temple list below the picture */
+main ul {
+  clear: both;
+  list-style-position: inside;
+}
+
+/* relative so the heading can sit on top of the image */
 aside {
   width: 20rem;
-  margin: 1rem;
-  border: 1px solid rgb(0 0 0 / 0.2);
-  padding: 1rem;
-  background-color: #eee;
-  color: #333;
   text-align: center;
+  position: relative;
+}
+
+/* country name over the picture */
+aside h2 {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
 }
 
 aside img {
@@ -54,4 +77,14 @@ footer {
   margin-top: 15px;
   border-top: 1px solid #000;
   text-align: center;
+}
+
+/* Class Selectors */
+
+.box {
+  margin: 1rem;
+  border: 1px solid rgb(0 0 0 / 0.2);
+  padding: 1rem;
+  background-color: #eee;
+  color: #333;
 }
