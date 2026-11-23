@@ -1,8 +1,12 @@
 :root {
-    --primary-color: #8b1e1e; /* deep river red (from the logo) */
-    --secondary-color: #f3e2c0; /* warm sand */
-    --accent1-color: #2b3a42; /* dark slate */
-    --accent2-color: #e0a84a; /* paddle gold (from the logo) */
+    --primary-color: #8b1e1e;
+    /* deep river red (from the logo) */
+    --secondary-color: #f3e2c0;
+    /* warm sand */
+    --accent1-color: #2b3a42;
+    /* dark slate */
+    --accent2-color: #e0a84a;
+    /* paddle gold (from the logo) */
     --heading-font: "Georgia", "Times New Roman", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -18,23 +22,64 @@ body {
     color: var(--accent1-color);
 }
 
-header, main, footer {
-    width: 840px;
+header,
+main,
+footer {
+    max-width: 840px;
     margin: 0 auto;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-nav, p, section, article {
+nav,
+p,
+section,
+article {
     margin: 16px;
     padding: 8px;
 }
 
-.socialmedia a {
+/* Header: grid puts the logo on the left and the nav on the right */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid var(--accent2-color);
+}
+
+header img {
+    display: block;
+    margin: 8px 16px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Nav: flex lays the links out horizontally */
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent1-color);
+    background-color: #fff;
+    color: var(--accent1-color);
     text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover {
+    background-color: var(--accent2-color);
 }
 
 /* Hero div with overlays */
@@ -75,4 +120,82 @@ h1 {
     margin-left: 12px;
     border: 2px solid var(--accent2-color);
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Section headings are centered */
+section h2 {
+    text-align: center;
+}
+
+/* History: text on the left, image in the middle, text on the right */
+.history {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent2-color);
+}
+
+.history h2 {
+    grid-column: 1 / -1;
+}
+
+.history img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adventures: five figures across the section */
+.adventures {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent2-color);
+}
+
+.adventure-list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8px;
+}
+
+.adventure-list figure {
+    flex: 1;
+    text-align: center;
+}
+
+.adventure-list img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    margin-top: 4px;
+    font-size: 0.85rem;
+}
+
+/* Footer: text on the left, social icons on the right */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-top: 3px solid var(--accent2-color);
+}
+
+.socialmedia {
+    display: flex;
+    gap: 8px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    display: block;
+    width: 40px;
+    height: auto;
 }

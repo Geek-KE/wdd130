@@ -5,29 +5,50 @@
   box-sizing: border-box;
 }
 
+/* limit the width and center the page sections */
+header,
+.grid,
+footer {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+/* navigation: horizontal, evenly spaced, centered */
 nav {
   background-color: #1a3d5c;
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 nav a {
-  color: #fff;
-  padding: 0.75rem 1rem;
   display: block;
+  padding: 0.5rem;
   text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 nav a:hover {
   background-color: #2f6690;
 }
 
-main {
-  max-width: 840px;
-}
-
 h1 {
   color: #1a3d5c;
+  border-bottom: 2px solid #1a3d5c;
+}
+
+/* grid layout: aside on the left, main on the right */
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+main {
+  grid-column: 2/3;
+  margin: 1rem;
 }
 
 /* profile picture floats to the right of my intro */
@@ -57,6 +78,8 @@ aside {
   color: #333;
   text-align: center;
   position: relative;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 /* country name over the picture */
