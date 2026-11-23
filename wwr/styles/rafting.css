@@ -150,22 +150,22 @@ section h2 {
 
 /* Adventures: five figures across the section */
 .adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
     background-color: var(--secondary-color);
     border: 1px solid var(--accent2-color);
 }
 
-.adventure-list {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 8px;
+.adventures h2 {
+    grid-column: 1 / -1;
 }
 
-.adventure-list figure {
-    flex: 1;
+.adventures figure {
     text-align: center;
 }
 
-.adventure-list img {
+.adventures img {
     display: block;
     width: 100%;
     height: auto;
